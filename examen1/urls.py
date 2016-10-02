@@ -20,16 +20,14 @@ from inicio.views import vista_Inicio, form_Asistente, form_Ponente, form_Staff
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', vista_Inicio.as_view(), name='index_view'),
-    #url(r'^NuevoAsistentes/$', vista_Asistente.as_view(), name='asistente_view'),
-    #url(r'^NuevoPonentes$', vista_Ponente.as_view(), name='about_view'),
-    #url(r'^NuevoStaff$', vista_Staff.as_view(), name='contact_view'),
-    #urls a los formularios.
     url(r'RegistroAsistente$', form_Asistente.as_view(),name='form_Asistente_view'),
-    url(r'RegistroPonente$', form_Asistente.as_view(),name='form_Ponente_view'),
-    url(r'RegistroStaff$', form_Asistente.as_view(),name='form_Staff_view'),
+    url(r'RegistroPonente$', form_Ponente.as_view(),name='form_Ponente_view'),
+    url(r'RegistroStaff$', form_Staff.as_view(),name='form_Staff_view'),
     url(r'^Asistentes$','inicio.views.asistente', name='todos_asistentes'),
     url(r'^Ponentes$','inicio.views.ponente', name='todos_ponentes'),
     url(r'^Staff$','inicio.views.staff',name='todos_staff'),
+    url(r'^horarios$','inicio.views.horario', name='horario_view'),
+    url(r'^conferencias$','inicio.views.conferencia',name='conferencias_view'),
 
 
 ]

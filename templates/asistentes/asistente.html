@@ -1,10 +1,36 @@
 {% extends 'base.html' %}
 {% block title %} asistentes {% endblock %}
 
+{% block top %}
+<span class="glyphicon glyphicon-user" style="width: 150px;"></span>
+{% endblock %}
+
 {% block content %}
-	<h1>Registro de Asistentes</h1>
-  {% for dato in asistente %}
-  <li>{{dato.asistente_name}}</li>
-  {% endfor %}
+
+<div class="panel panel-info">
+	<div class="panel-heading">Asistentes</div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Ponencia</th>
+				<th>Correo</th>
+				<th>Telefono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+				{% for element in asistente %}
+
+        <td>{{ element.Nombre_Asistente }} {{ element.Apellido_Asistente }}</td>
+        <td>{{ element.Asistir_Ponencia }}</td>
+				<td>{{ element.Correo_Asistente }}</td>
+				<td>{{ element.Telefono_Asistente }}</td>
+
+						{% endfor %}
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 {% endblock %}

@@ -7,10 +7,14 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+  <link rel="stylesheet" href="{% static 'js/bootstrap.min.js'%}">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <style>
-   /* Remove the navbar's default margin-bottom and rounded borders */
+   /* Remove the navbar's default margin-bottom and rounded borders
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   */
    .navbar {
      margin-bottom: 0;
      border-radius: 0;
@@ -22,7 +26,7 @@
    /* Set gray background color and 100% height */
    .sidenav {
      padding-top: 20px;
-     background-color: #f1f1f1;
+     background-color: #68A9A0;
      height: 100%;
    }
 
@@ -58,7 +62,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Inicio</a></li>
+        <li><a href="{% url 'index_view' %}">Inicio</a></li>
         <li><a href="{% url 'form_Asistente_view' %}">+ Asistentes</a></li>
         <li><a href="{% url 'form_Ponente_view' %}">+ Ponentes</a></li>
         <li><a href="{% url 'form_Staff_view' %}">+ Staff</a></li>
@@ -70,25 +74,21 @@
 <div class="container-fluid text-center">
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <p><a href="{% url 'todos_asistentes' %}">Reporte Asistentes</a></p>
-      <p><a href="{% url 'todos_ponentes' %}">Reporte Ponentes</a></p>
-      <p><a href="{% url 'todos_staff' %}">Reporte Staff</a></p>
+      <p><a href="{% url 'todos_asistentes' %}" class="btn btn-primary">Reporte Asistentes</a></p>
+      <p><a href="{% url 'todos_ponentes' %}" class="btn btn-primary">Reporte Ponentes</a></p>
+      <p><a href="{% url 'todos_staff' %}" class="btn btn-primary">Reporte Staff</a></p>
     </div>
     <div class="col-sm-8 text-left">
-      <h1>Welcome</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      {% block top %}
+  {% endblock %}
+
       <hr>
-      <h3>Test</h3>
       {% block content %}
 {% endblock %}
     </div>
     <div class="col-sm-2 sidenav">
-      <div class="well">
-        <p>ADS</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
+      <p><a href="{% url 'conferencias_view' %}" class="btn btn-primary">Conferencias</a></p>
+      <p><a href="{% url 'horario_view' %}" class="btn btn-primary">Horario</a></p>
     </div>
   </div>
 </div>

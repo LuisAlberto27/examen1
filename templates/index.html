@@ -1,8 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} # cargar el diseño de la plantilla base.
+{% load static %} #cargar archivos estaticos de la carpeta images
 {% block title %} Inicio {% endblock %}
 
+{% block top %}
+<div >
+
+</div>
+<img src="{% static "images/ponencia.jpg" %}" class="img-thumbnail" alt="Cinque Terre" width="500px" height="350px">
+{% endblock %}
+
+
 {% block content %}
-	<h1>Pagina De Inicio</h1>
+		<h1>Pagina De Contenido</h1>
 {% endblock %}
 
 <div class="table-responsive">

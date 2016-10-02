@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-{% block title %} asistentes {% endblock %}
+{% block title %} Staff {% endblock %}
 
 {% block content %}
 	<h1>Registro de Staff</h1>
   {% for dato in staff %}
-  <li>{{dato.staff_name}}</li>
+  <li>{{dato.Nombre_Staff}}</li>
   {% endfor %}
 
 {% endblock %}

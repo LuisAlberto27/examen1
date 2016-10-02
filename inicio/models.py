@@ -2,30 +2,35 @@ from django.db import models
 
 # Create your models here.
 class modelo_Asistente(models.Model):
-    asistente_name = models.CharField(max_length=24)
-    asistente_apellido = models.CharField(max_length=24)
-    asistente_edad = models.FloatField()
-    asistente_matricula = models.CharField(max_length=24)
+    Nombre_Asistente = models.CharField(max_length=24)
+    Apellido_Asistente = models.CharField(max_length=24)
+    Asistir_Ponencia = models.CharField(max_length=24)
+    Correo_Asistente = models.CharField(max_length=24)
+    Telefono_Asistente = models.CharField(max_length=15)
 
     def __str__(self):
-        return self.asistente_name
+        return self.Nombre_Asistente
 
 
 class modelo_Ponente(models.Model):
-    ponente_name = models.CharField(max_length=24)
-    ponente_apellido = models.CharField(max_length=24)
-    ponente_edad = models.FloatField()
-    ponente_matricula = models.CharField(max_length=24)
+    Titulo_Ponencia = models.CharField(max_length=24)
+    Nombre_Ponente = models.CharField(max_length=15)
+    Apellido_Ponente = models.CharField(max_length=24)
+    Dia_Ponencia = models.CharField(max_length=24)
+    Hora_Ponencia = models.FloatField()
+    Correo_Ponente = models.CharField(max_length=24)
+    Telefono_Ponente = models.CharField(max_length=15)
 
-    def __unicode__(self):
-        return '%s-%f'%self.asistente_name, self.asistente_type
+    def __str__(self):
+        return '%s-%f'%self.Titulo_Ponencia, self.Nombre_Ponente
 
 
 class modelo_Staff(models.Model):
-    staff_name = models.CharField(max_length=24)
-    staff_apellido = models.CharField(max_length=24)
-    staff_edad = models.FloatField()
-    staff_matricula = models.CharField(max_length=24)
+    Nombre_Staff = models.CharField(max_length=24)
+    Apellido_Staff = models.CharField(max_length=24)
+    Puesto_Staff = models.CharField(max_length=24)
+    Correo_Staff = models.CharField(max_length=24)
+    Telefono_Staff = models.CharField(max_length=15)
 
-    def __unicode__(self):
-        return '%s-%f'%self.asistente_name, self.asistente_type
+    def __str__(self):
+        return self.Nombre_Staff

@@ -1,9 +1,13 @@
 from django.shortcuts import render, render_to_response
 from .models import modelo_Asistente, modelo_Ponente, modelo_Staff
 from django.http import HttpResponse, HttpResponseRedirect
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, ListView
 from django.core.urlresolvers import reverse_lazy
 from .forms import form_Asistente, form_Ponente, form_Staff
+
+
+class ListaTipoAlmacen(ListView):
+    model = modelo_Asistente
 
 
 # vista de las paginas.
@@ -22,6 +26,15 @@ def ponente(request):
 def staff(request):
 	staff = modelo_Staff.objects.all()
 	return render_to_response('staff/staff.html', {'staff':staff})
+
+# vistas de los horarios y de las ponencias
+def horario(request):
+	horario = modelo_Ponente.objects.all()
+	return render_to_response('ponencias/horario.html', {'ponente':ponente})
+
+def conferencia(request):
+	conferencia = modelo_Staff.objects.all()
+	return render_to_response('ponencias/conferencias.html', {'staff':staff})
 
 
 #class vista_Asistente(TemplateView):
