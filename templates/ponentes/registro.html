@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+{% block title %} RegistroPonentes {% endblock %}
+
+{% block content %}
+	<form method='POST'>
+	      {% csrf_token %}
+	      {{ form }}
+	      <input type='submit' value='Registrar'>
+	      <input type='reset' value='Cancel'>
+</form>
+
+{% endblock %}

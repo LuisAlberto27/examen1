@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %} asistentes {% endblock %}
+
+{% block content %}
+	<h1>Registro de Staff</h1>
+  {% for dato in staff %}
+  <li>{{dato.staff_name}}</li>
+  {% endfor %}
+
+{% endblock %}
