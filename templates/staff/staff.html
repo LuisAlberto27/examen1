@@ -1,10 +1,37 @@
 {% extends 'base.html' %}
+{% load static %} #cargar archivos estaticos de la carpeta images
 {% block title %} Staff {% endblock %}
 
+{% block top %}
+<img src="{% static "images/newspaper.png" %}" class="img-thumbnail" alt="Cinque Terre" width="70px" height="45px" float:"right" >
+{% endblock %}
+
 {% block content %}
-	<h1>Registro de Staff</h1>
-  {% for dato in staff %}
-  <li>{{dato.Nombre_Staff}}</li>
-  {% endfor %}
+
+<div class="panel panel-info">
+	<div class="panel-heading">Staff</div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Puesto</th>
+				<th>Correo</th>
+				<th>Telefono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+				{% for element in staff %}
+
+        <td>{{ element.Nombre_Staff }} {{ element.Apellido_Staff }}</td>
+				<td>{{ element.Puesto_Staff }}</td>
+				<td>{{ element.Correo_Staff }}</td>
+				<td>{{ element.Telefono_Staff }}</td>
+
+						{% endfor %}
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 {% endblock %}

@@ -1,7 +1,12 @@
 {% extends 'base.html'%}
+{% load static %} #cargar archivos estaticos de la carpeta images
 {% load bootstrap %}
 
 {% block title %} RegistroPonentes {% endblock %}
+
+{% block top %}
+<img src="{% static "images/journalist.png" %}" class="img-thumbnail" alt="Cinque Terre" width="70px" height="45px" float:"right" >
+{% endblock %}
 
 {% block content %}
 <form method='POST'>

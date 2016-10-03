@@ -1,10 +1,39 @@
 {% extends 'base.html' %}
+{% load static %} #cargar archivos estaticos de la carpeta images
 {% block title %} Ponentes {% endblock %}
 
+{% block top %}
+<img src="{% static "images/newspaper.png" %}" class="img-thumbnail" alt="Cinque Terre" width="70px" height="45px" float:"right" >
+{% endblock %}
+
 {% block content %}
-	<h1>Registro de Ponentes</h1>
-  {% for dato in ponente %}
-  <li>{{dato.Titulo_Ponencia}}</li>
-  {% endfor %}
+
+<div class="panel panel-info">
+	<div class="panel-heading">Ponentes</div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Ponencia</th>
+        <th>Nombre</th>
+				<th>Horario</th>
+				<th>Correo</th>
+				<th>Telefono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+				{% for element in asistente %}
+
+        <td>{{ element.Titulo_Ponencia }}</td>
+        <td>{{ element.Nombre_Ponente }} {{ element.Apellido_Ponente }}</td>
+				<td>{{ element.Dia_Ponencia }} {{ element.Hora_Ponencia }}</td>
+				<td>{{ element.Correo_Ponente }}</td>
+				<td>{{ element.Telefono_Ponente }}</td>
+
+						{% endfor %}
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 {% endblock %}

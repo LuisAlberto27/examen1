@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+{% extends 'base.html' %}
+{% load static %} #cargar archivos estaticos de la carpeta images
+{% block title %} Conferencias {% endblock %}
 
-  </body>
-</html>
+{% block top %}
+<img src="{% static "images/lecture.png" %}" class="img-thumbnail" alt="Cinque Terre" width="70px" height="45px" float:"right" >
+{% endblock %}
+
+{% block content %}
+
+<div class="panel panel-info">
+	<div class="panel-heading">Conferencias</div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Ponencia</th>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+				{% for element in ponente %}
+
+				<td>{{ element.Titulo_Ponencia }}</td>
+        <td>{{ element.Nombre_Ponente }} {{ element.Apellido_Ponente }}</td>
+
+						{% endfor %}
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
