@@ -30,11 +30,11 @@ def staff(request):
 # vistas de los horarios y de las ponencias
 def horario(request):
 	horario = modelo_Ponente.objects.all()
-	return render_to_response('ponencias/horario.html', {'ponente':ponente})
+	return render_to_response('ponencias/horario.html', {'horario':horario})
 
 def conferencia(request):
-	conferencia = modelo_Staff.objects.all()
-	return render_to_response('ponencias/conferencias.html', {'staff':staff})
+	conferencia = modelo_Ponente.objects.all()
+	return render_to_response('ponencias/conferencias.html', {'conferencia':conferencia})
 
 
 #class vista_Asistente(TemplateView):

@@ -14,22 +14,18 @@
     <thead>
       <tr>
         <th>Ponencia</th>
-        <th>Dia</th>
         <th>Hora</th>
         <th>Ponente</th>
       </tr>
     </thead>
     <tbody>
+			{% for element in horario %}
       <tr>
-				{% for element in ponente %}
-
         <td>{{ element.Titulo_Ponencia }}</td>
-        <td>{{ element.Dia_Ponencia }}</td>
 				<td>{{ element.Hora_Ponencia }}</td>
         <td>{{ element.Nombre_Ponente }} {{ element.Apellido_Ponente }}</td>
-
-						{% endfor %}
       </tr>
+			{% endfor %}
     </tbody>
   </table>
 </div>

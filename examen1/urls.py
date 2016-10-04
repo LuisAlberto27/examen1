@@ -25,9 +25,9 @@ urlpatterns = [
     url(r'RegistroStaff$', form_Staff.as_view(),name='form_Staff_view'),
     url(r'^Asistentes$','inicio.views.asistente', name='todos_asistentes'),
     url(r'^Ponentes$','inicio.views.ponente', name='todos_ponentes'),
-    url(r'^Staff$','inicio.views.staff',name='todos_staff'),
+    url(r'^Staff$','inicio.views.staff', name='todos_staff'),
     url(r'^horarios$','inicio.views.horario', name='horario_view'),
-    url(r'^conferencias$','inicio.views.conferencia',name='conferencias_view'),
+    url(r'^conferencias$','inicio.views.conferencia', name='conferencias_view'),
 
 
 ]

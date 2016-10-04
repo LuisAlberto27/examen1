@@ -21,17 +21,15 @@
       </tr>
     </thead>
     <tbody>
+			{% for element in ponente %}
       <tr>
-				{% for element in asistente %}
-
         <td>{{ element.Titulo_Ponencia }}</td>
         <td>{{ element.Nombre_Ponente }} {{ element.Apellido_Ponente }}</td>
 				<td>{{ element.Dia_Ponencia }} {{ element.Hora_Ponencia }}</td>
 				<td>{{ element.Correo_Ponente }}</td>
 				<td>{{ element.Telefono_Ponente }}</td>
-
-						{% endfor %}
       </tr>
+			{% endfor %}
     </tbody>
   </table>
 </div>

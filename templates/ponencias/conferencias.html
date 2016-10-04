@@ -18,14 +18,12 @@
       </tr>
     </thead>
     <tbody>
+			{% for element in conferencia %}
       <tr>
-				{% for element in ponente %}
-
 				<td>{{ element.Titulo_Ponencia }}</td>
         <td>{{ element.Nombre_Ponente }} {{ element.Apellido_Ponente }}</td>
-
-						{% endfor %}
       </tr>
+			{% endfor %}
     </tbody>
   </table>
 </div>
